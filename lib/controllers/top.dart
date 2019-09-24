@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:weather_forecast/views/weather_forecast_listview.dart';
+import 'package:weather_forecast/views/main_top_view.dart';
 
 class weatherForecastApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -19,22 +20,21 @@ class weatherForecastApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'Weather Forecast'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
+  final _mainTopView = MainTopView();
+  final _weatherForecastListView = WeatherForeCastListView();
 
   void _incrementCounter() {
     setState(() {
@@ -49,33 +49,25 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Stack(
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              image:
-            ),
-          )
-        ],
-
-      ),
+      body: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+            image: AssetImage('images/sunny/sunny.jpg'),
+            fit: BoxFit.cover,
+          )),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              _mainTopView,
+              _weatherForecastListView
+            ],
+          )),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+          onPressed: _incrementCounter,
+          tooltip: 'Increment',
+          child: Icon(Icons
+              .add)), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
