@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather_forecast/views/weather_forecast_listview.dart';
-import 'package:weather_forecast/views/main_top_view.dart';
+import 'package:weather_forecast/Views/weather_forecast_listview.dart';
+import 'package:weather_forecast/Views/main_top_view.dart';
 
 class weatherForecastApp extends StatelessWidget {
   // This widget is the root of your application.
