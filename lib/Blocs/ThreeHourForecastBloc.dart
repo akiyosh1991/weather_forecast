@@ -2,6 +2,7 @@
 import 'dart:async';
 import 'package:weather_forecast/Blocs/BlocProvider.dart';
 import 'package:weather_forecast/Model/ApiClient.dart';
+import 'package:weather_forecast/Model/ThreeHourForecast/ThreeHourForecast.dart';
 
 
 class ThreeHourForecastBloc implements BlocBase {
@@ -20,6 +21,7 @@ class ThreeHourForecastBloc implements BlocBase {
 
   void _getItems() async {
     final itemList = await ThreeHourForecastClient().getItems();
+    print(itemList);
     _threeHourForecastController.sink.add(itemList);
   }
 

@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 class WeatherForeCastListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return             Container(
+    return Container(
       decoration: BoxDecoration(
           border: Border(
-            top: BorderSide(width: 0.5, color: Color(0xFFFFFFFFFF)),
-            bottom: BorderSide(width: 0.5, color: Color(0xFFFFFFFFFF)),
-          )
-      ),
+        top: BorderSide(width: 0.5, color: Color(0xFFFFFFFFFF)),
+        bottom: BorderSide(width: 0.5, color: Color(0xFFFFFFFFFF)),
+      )),
       height: 100.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
@@ -27,17 +26,18 @@ class WeatherForeCastListView extends StatelessWidget {
                   ),
                   Container(
                     height: 50,
-                    child: const Center(child: Icon(Icons.wb_sunny,color: Colors.yellow,)),
+                    child: const Center(
+                        child: Icon(
+                      Icons.wb_sunny,
+                      color: Colors.yellow,
+                    )),
                   ),
                   Container(
                     height: 25,
                     child: const Center(child: Text('30°')),
                   ),
                 ],
-              )
-
-          ), // 天気の要素
-
+              )), // 天気の要素
         ],
       ),
     );
