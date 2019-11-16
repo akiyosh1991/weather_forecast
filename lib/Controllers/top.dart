@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _threeHourForecastListView(ThreeHourForecast item) {
     return Card(
       child: ListTile(
-        title: Text(item.date)
+        title: Text(item.listMain.tempMax.toString())
       ),
     );
   }
